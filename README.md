@@ -8,6 +8,9 @@ yarn dev
 npx next --version
 ```
 
+# ChakraUIのライブラリ集(自作)
+
+https://qiita.com/Hashimoto-Noriaki/items/ca4d3eae1318e296e684
 
 ### ChakraUIのエラー対処記事
 
