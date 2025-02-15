@@ -1,0 +1,12 @@
+.logo {
+    color: #ffffff; /* 文字色を白く */
+    text-shadow: 
+      2px 2px 2px #3f6212,
+      -2px 2px 2px #3f6212,
+      2px -2px 2px #3f6212,
+      -2px -2px 2px #3f6212,
+      2px 0px 2px #3f6212,
+      0px 2px 2px #3f6212,
+      -2px 0px 2px #3f6212,
+      0px -2px 2px #3f6212;
+}
