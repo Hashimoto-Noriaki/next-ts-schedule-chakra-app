@@ -38,3 +38,73 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+```tsx
+import { Box, Flex, HStack, Link, Text, Button } from "@chakra-ui/react";
+
+export const TopPage = () => {
+  return (
+    <Box 
+        position="relative"
+        h="100vh"
+        bgGradient="linear(to-r,lime.100,lime.200)"
+    >
+        <Box 
+            as="header"
+            position="fixed"
+            right="0"
+            left="0"
+            top="0"
+            bg="white"
+            py="4"
+        >
+            <Flex
+                justify="space-between"
+                px="6"
+            >
+                {/* ロゴ */}
+                <Text fontSize="xl" fontWeight="bold"className="logo" >
+                    スケジュール管理App
+                </Text>
+                {/* ナビゲーション */}
+                <HStack spacing="6" pr="6">
+                    <Link href="#" fontSize="md" _hover={{ textDecoration: "underline" }}>
+                        利用方法
+                    </Link>
+                    <Link href="#" fontSize="md" _hover={{ textDecoration: "underline" }}>
+                        ログイン
+                    </Link>
+                </HStack>
+            </Flex>
+        </Box>
+        {/* コンテンツエリア */}
+        <Box
+            as = "main"
+            pt="80px"
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            textAlign="center"
+        >
+            {/* タイトル */}
+            <Text fontWeight="bold" fontSize="70" className="logo">
+                スケジュール管理APP
+            </Text>
+            {/* 説明文 */}
+            <Text pt="10vh" fontSize="5xl">
+                お互いのスケジュールを管理するアプリです
+            </Text>
+
+            {/* ログインボタン */}
+            <Box pt="10">
+                <Button bg="lime.800" color="white" p="8" fontSize="lg" borderRadius="lg" _hover = {{ bg: "lime.600" }}>
+                    ログイン
+                </Button>
+            </Box>
+
+        </Box>
+    </Box>
+  )
+}
+```

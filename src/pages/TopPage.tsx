@@ -1,22 +1,63 @@
-import { Box, Flex, HStack, Link, Spacer, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Link, Text } from "@chakra-ui/react";
 
 export const TopPage = () => {
   return (
-    <Box>
-        <Flex as="header" p="4">
-            <Text fontSize="xl" fontWeight="bold">
-                スケジュール管理App
+    <Box 
+        position="relative"
+        h="100vh"
+        bgGradient="linear(to-r, lime.100, lime.200)"
+    >
+        <Box 
+            as="header"
+            position="fixed"
+            right="0"
+            left="0"
+            top="0"
+            py="4"
+            bg="white"
+        >
+            <Flex
+                justify="space-between"
+                px="6"
+            >
+                {/* ロゴ */}
+                <Text fontSize="xl" fontWeight="bold"className="logo" >
+                    スケジュール管理App
+                </Text>
+                {/* ナビゲーション */}
+                <HStack spacing="6" pr="6">
+                    <Link href="#" fontSize="md" _hover={{ textDecoration: "underline" }}>
+                        利用方法
+                    </Link>
+                    <Link href="#" fontSize="md" _hover={{ textDecoration: "underline" }}>
+                        ログイン
+                    </Link>
+                </HStack>
+            </Flex>
+        </Box>
+        {/* コンテンツエリア */}
+        <Box 
+            as = "main"
+            textAlign="center" 
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            h="100%"
+        >
+            <Text fontWeight="bold" fontSize="7xl" className="logo" pt="8">
+                スケジュール管理APP
             </Text>
-            <Spacer />
-            <HStack spacing="6">
-                <Link href="#" fontSize="md" _hover={{ textDecoration: "underline" }}>
-                    利用方法
-                </Link>
-                <Link href="#" fontSize="md" _hover={{ textDecoration: "underline" }}>
+            <Text fontSize="5xl" pt="10vh">
+                お互いのスケジュールを管理するアプリです。
+            </Text>
+            {/* コンテンツエリア */}
+            <Box pt="20vh">
+                <Button bg="lime.800" color="white" p="8" borderRadius="lg" fontSize="20" _hover={{ bg: "lime.700" }}>
                     ログイン
-                </Link>
-            </HStack>
-        </Flex>
+                </Button>
+            </Box>
+        </Box>
     </Box>
   )
 }
