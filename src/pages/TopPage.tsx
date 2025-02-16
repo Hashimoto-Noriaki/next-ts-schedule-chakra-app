@@ -1,5 +1,5 @@
 import { PrimaryBtn } from "@/components/atoms/PrimaryBtn";
-import { NotLoginLayout } from "@/components/templates/NotLoginlayout";
+import { NotLoginLayout } from "@/components/templates/NotLoginLayout";
 import { Box,Text } from "@chakra-ui/react";
 
 export const TopPage = () => {
