@@ -5,16 +5,47 @@ import { PrimaryBtn } from "../components/atoms/PrimaryBtn";
 export default function LoginPage() {
   return (
     <NotLoginLayout>
-      <Box textAlign="center">
-        {/* タイトル */}
-        <Text fontSize="5xl" fontWeight="bold">
-          ログイン
-        </Text>
+      <Box
+        w="500px"
+        bg="white"
+        borderRadius="lg"
+        shadow="lg"
+        py="10"
+        px="6"
+      >
+        <VStack as="form" spacing="6">
+          {/* タイトル */}
+          <Text fontSize="3xl" fontWeight="bold" color="lime.800" textAlign="center">
+            ログイン
+          </Text>
 
-        {/* フォーム */}
-        <VStack spacing="6" mt="8" w="sm">
-          <Input placeholder="メールアドレス" size="lg" w="100%"/>
-          <Input placeholder="パスワード" type="password" size="lg" w="100%"/>
+          {/* メールアドレス入力 */}
+          <Box w="80%">
+            <Input
+              type="text"
+              placeholder="email"
+              size="lg"
+              border="4px solid"
+              borderColor="lime.800"
+              borderRadius="md"
+              p="2"
+            />
+          </Box>
+
+          {/* パスワード入力 */}
+          <Box w="80%">
+            <Input
+              type="password"
+              placeholder="password"
+              size="lg"
+              border="4px solid"
+              borderColor="lime.800"
+              borderRadius="md"
+              p="2"
+            />
+          </Box>
+
+          {/* ログインボタン */}
           <PrimaryBtn>ログイン</PrimaryBtn>
         </VStack>
       </Box>

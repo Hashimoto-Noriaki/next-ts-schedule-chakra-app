@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import { Box, Flex, HStack, Link, Text } from "@chakra-ui/react";
-import  Outlet  from "next/router";
 
 type PropsType = {
   children?: ReactNode;
@@ -49,7 +48,7 @@ export const NotLoginLayout = ({ children }: PropsType) => {
         textAlign="center"
         h="100%"
       >
-        {children || <Outlet />}
+        { children }
       </Box>
     </Box>
   );
