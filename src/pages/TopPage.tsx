@@ -1,8 +1,11 @@
 import { PrimaryBtn } from "../components/atoms/PrimaryBtn";
 import { NotLoginLayout } from "../components/templates/NotLoginLayout";
 import { Box, Text } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 export const TopPage = () => {
+  const router = useRouter();
+
   return (
     <NotLoginLayout>
       <Box textAlign="center">
@@ -18,7 +21,7 @@ export const TopPage = () => {
 
         {/* ログインボタン */}
         <Box pt="20vh">
-          <PrimaryBtn>ログイン</PrimaryBtn>
+          <PrimaryBtn onClick={() => router.push("/login")}>ログイン</PrimaryBtn>
         </Box>
       </Box>
     </NotLoginLayout>
