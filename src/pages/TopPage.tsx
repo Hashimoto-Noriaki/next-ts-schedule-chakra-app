@@ -1,4 +1,5 @@
-import { Box, Button, Flex, HStack, Link, Text } from "@chakra-ui/react";
+import { PrimaryBtn } from "@/components/atoms/PrimaryBtn";
+import { Box, Flex, HStack, Link, Text } from "@chakra-ui/react";
 
 export const TopPage = () => {
   return (
@@ -53,9 +54,7 @@ export const TopPage = () => {
             </Text>
             {/* コンテンツエリア */}
             <Box pt="20vh">
-                <Button bg="lime.800" color="white" p="8" borderRadius="lg" fontSize="20" _hover={{ bg: "lime.700" }}>
-                    ログイン
-                </Button>
+                <PrimaryBtn>ログイン</PrimaryBtn>
             </Box>
         </Box>
     </Box>
