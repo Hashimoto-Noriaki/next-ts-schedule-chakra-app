@@ -1,8 +1,12 @@
-import { Box, Flex, HStack, Link, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Link, Text } from "@chakra-ui/react";
 
 export const TopPage = () => {
   return (
-    <Box position="relative">
+    <Box 
+        position="relative"
+        h="100vh"
+        bgGradient="linear(to-r, lime.100, lime.200)"
+    >
         <Box 
             as="header"
             position="fixed"
@@ -10,6 +14,7 @@ export const TopPage = () => {
             left="0"
             top="0"
             py="4"
+            bg="white"
         >
             <Flex
                 justify="space-between"
@@ -31,10 +36,27 @@ export const TopPage = () => {
             </Flex>
         </Box>
         {/* コンテンツエリア */}
-        <Box textAlign="center" pt="80px">
-            <Text fontWeight="bold" fontSize="30">
-                ようこそ！スケジュール管理APPへ
+        <Box 
+            as = "main"
+            textAlign="center" 
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            h="100%"
+        >
+            <Text fontWeight="bold" fontSize="7xl" className="logo" pt="8">
+                スケジュール管理APP
             </Text>
+            <Text fontSize="5xl" pt="10vh">
+                お互いのスケジュールを管理するアプリです。
+            </Text>
+            {/* コンテンツエリア */}
+            <Box pt="20vh">
+                <Button bg="lime.800" color="white" p="8" borderRadius="lg" fontSize="20" _hover={{ bg: "lime.700" }}>
+                    ログイン
+                </Button>
+            </Box>
         </Box>
     </Box>
   )
