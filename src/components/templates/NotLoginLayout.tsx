@@ -20,9 +20,11 @@ export const NotLoginLayout = ({ children }: PropsType) => {
         zIndex="10"
       >
         <Flex mx="auto" px="6" align="center" justify="space-between">
-          {/* ロゴ */}
+          {/* ロゴ（クリックでTopPageに遷移） */}
           <Text fontSize="xl" fontWeight="bold" className="logo">
-            スケジュール管理APP
+            <Link href="/" _hover={{ textDecoration: "none" }}>
+              スケジュール管理APP
+            </Link>
           </Text>
 
           {/* ナビゲーション */}

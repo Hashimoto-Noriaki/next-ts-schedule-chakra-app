@@ -23,12 +23,13 @@ export default function LoginPage() {
           <Box w="80%">
             <Input
               type="text"
-              placeholder="email"
+              placeholder="メールアドレス"
               size="lg"
               border="4px solid"
               borderColor="lime.800"
               borderRadius="md"
               p="2"
+              _hover={{ borderColor: "lime.800" }} //Chakra UI の Input はデフォルトでホバー時に色が変わるスタイル (_hover スタイル) が適用
             />
           </Box>
 
@@ -36,12 +37,13 @@ export default function LoginPage() {
           <Box w="80%">
             <Input
               type="password"
-              placeholder="password"
+              placeholder="パスワード"
               size="lg"
               border="4px solid"
               borderColor="lime.800"
               borderRadius="md"
               p="2"
+              _hover={{ borderColor: "lime.800" }}//Chakra UI の Input はデフォルトでホバー時に色が変わるスタイル (_hover スタイル) が適用
             />
           </Box>
 
