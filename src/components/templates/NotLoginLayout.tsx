@@ -31,10 +31,10 @@ export const NotLoginLayout = ({ children}: PropsType) => {
             </Text>
             {/* ナビゲーション */}
             <HStack spacing="6" pr="6">
-                <Link href="#" fontSize="md" _hover={{ textDecoration: "underline" }}>
+                <Link href="/" fontSize="md" _hover={{ textDecoration: "underline" }}>
                     利用方法
                 </Link>
-                <Link href="#" fontSize="md" _hover={{ textDecoration: "underline" }}>
+                <Link href="/login" fontSize="md" _hover={{ textDecoration: "underline" }}>
                     ログイン
                 </Link>
             </HStack>
