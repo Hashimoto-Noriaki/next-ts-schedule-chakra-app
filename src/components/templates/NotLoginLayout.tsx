@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { Box,Flex,HStack,Link,Text,} from "@chakra-ui/react";  
+import { Box,Flex,HStack,Link,Text } from "@chakra-ui/react";  
 
 type PropsType = {
     children: ReactNode;
@@ -27,14 +27,16 @@ export const NotLoginLayout = ({ children}: PropsType) => {
         >
             {/* ロゴ */}
             <Text fontSize="xl" fontWeight="bold"className="logo" >
+            <Link href="/" _hover={{ textDecoration: "none" }}>
                 スケジュール管理App
+            </Link>
             </Text>
             {/* ナビゲーション */}
             <HStack spacing="6" pr="6">
-                <Link href="#" fontSize="md" _hover={{ textDecoration: "underline" }}>
+                <Link href="/" fontSize="md" _hover={{ textDecoration: "underline" }}>
                     利用方法
                 </Link>
-                <Link href="#" fontSize="md" _hover={{ textDecoration: "underline" }}>
+                <Link href="/login" fontSize="md" _hover={{ textDecoration: "underline" }}>
                     ログイン
                 </Link>
             </HStack>
