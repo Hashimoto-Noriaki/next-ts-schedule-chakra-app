@@ -23,7 +23,7 @@ export default function LoginPage() {
           <Box w="80%">
             <Input
               type="text"
-              placeholder="email"
+              placeholder="メールアドレス"
               size="lg"
               border="4px solid"
               borderColor="lime.800"
