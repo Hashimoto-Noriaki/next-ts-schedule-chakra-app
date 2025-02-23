@@ -3,7 +3,7 @@ export type LoginInfoType = {
     password: string;
 };
 
-export type LoginReturnType = {
+export type LoginUserType = {
     id: number;
     name: string;
-};
+  };

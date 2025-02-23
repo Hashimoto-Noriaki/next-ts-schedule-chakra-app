@@ -1,11 +1,16 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { useRouter } from "next/router";
+import { useSetRecoilState } from "recoil";
 import { NotLoginLayout } from "../components/templates/NotLoginLayout";
-import { Box, Text, Input, VStack, Alert, AlertIcon } from "@chakra-ui/react";
+import { Box, Text, Input, VStack,Alert, AlertIcon } from "@chakra-ui/react";
 import { PrimaryBtn } from "../components/atoms/PrimaryBtn";
+import { loginUserState } from "../components/atoms/loginUserState";
 import { login } from "./api/login";
 import { LoginInfoType } from "../types/login";
 
 export default function LoginPage() {
+  const router = useRouter();
+  const setLoginUser = useSetRecoilState(loginUserState); 
   const [loginInfo, setLoginInfo] = useState<LoginInfoType>({
     email: "",
     password: "",
@@ -18,19 +23,20 @@ export default function LoginPage() {
     setLoginInfo({ ...loginInfo, [name]: value });
   };
 
-  // ログイン処理
   const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setErrorMessage("");
-
+  
     try {
-      const user = await login(loginInfo);
-      alert(`ログイン成功: ${user.name}`);
-    } catch {
+      const user = await login(loginInfo); // ✅ 非同期でログインを待機
+      setLoginUser(user); // ✅ Recoil にユーザー情報を保存
+      router.push("/calendar"); // ✅ ログイン成功後にカレンダーへ遷移
+    } catch (error) {
+      console.error("ログインエラー:", error);
       setErrorMessage("ログインに失敗しました");
     }
   };
-
+  
   return (
     <NotLoginLayout>
       {/* ✅ VStack の代わりに Box を form にする */}
@@ -82,7 +88,6 @@ export default function LoginPage() {
               onChange={changeLoginInfo}
             />
           </Box>
-
           {/* ログインボタン */}
           <PrimaryBtn type="submit">ログイン</PrimaryBtn>
         </VStack>
